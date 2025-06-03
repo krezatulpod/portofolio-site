@@ -1,9 +1,10 @@
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+  const revealPoint = 100;
+
   for (let el of reveals) {
-    const windowHeight = window.innerHeight;
     const revealTop = el.getBoundingClientRect().top;
-    const revealPoint = 100;
 
     if (revealTop < windowHeight - revealPoint) {
       el.classList.add("active");
@@ -11,5 +12,6 @@ function revealOnScroll() {
   }
 }
 
+// Rulează o dată la scroll și o dată la load
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);

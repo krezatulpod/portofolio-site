@@ -2,10 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   line-height: 1.6;
   background: #f4f4f4;
   color: #333;
@@ -16,9 +15,9 @@ body {
 header {
   position: relative;
   background: url('public/img/header-bg.jpg') no-repeat center center;
-  background-size:contain;
+  background-size: contain;
   color: #fff;
-  height: 60vh; 
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +33,7 @@ header::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4); 
+  background: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -42,9 +41,8 @@ header h1,
 header p,
 header .btn {
   position: relative;
-  z-index: 1; /* ca să fie deasupra overlay-ului */
+  z-index: 1;
 }
-
 
 header .btn {
   display: inline-block;
@@ -56,42 +54,36 @@ header .btn {
   border-radius: 5px;
   transition: all 0.3s ease;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .btn:hover {
   background: #008ba3;
   transform: scale(0.98);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 section {
   margin: 40px 0;
   padding: 20px;
 }
 
-.project {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+section + section {
+  margin-top: 60px;
 }
 
-footer {
-  margin-top: 60px;
-  font-size: 14px;
-  color: #888;
+section h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #0b4f6c;
 }
 
 #services ul {
-  list-style: none; 
+  list-style: none;
   padding: 0;
   max-width: 500px;
   margin: 0 auto;
-  text-align: left; 
+  text-align: left;
 }
 
 #services li {
@@ -101,10 +93,43 @@ footer {
   position: relative;
 }
 
+#services li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #00bcd4;
+  font-size: 18px;
+}
+
+/* Card styling for projects */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover efect pe link-urile din proiecte */
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #00bcd4;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #008ba3;
+}
+
+/* Reveal on scroll animation */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal.active {
@@ -112,6 +137,13 @@ footer {
   transform: none;
 }
 
+footer {
+  margin-top: 60px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   header {
     padding: 60px 15px;
@@ -129,7 +161,7 @@ footer {
     padding: 0 15px;
   }
 
-  .project {
+  .card {
     margin: 0 15px;
   }
 
