@@ -1,0 +1,139 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  position: relative;
+  background: url('public/img/header-bg.jpg') no-repeat center center;
+  background-size:contain;
+  color: #fff;
+  height: 60vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 0;
+}
+
+header h1,
+header p,
+header .btn {
+  position: relative;
+  z-index: 1; /* ca să fie deasupra overlay-ului */
+}
+
+
+header .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #00bcd4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header .btn:hover {
+  background: #008ba3;
+  transform: scale(0.98);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+
+section {
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  margin-top: 60px;
+  font-size: 14px;
+  color: #888;
+}
+
+#services ul {
+  list-style: none; 
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left; 
+}
+
+#services li {
+  margin: 10px 0;
+  font-size: 18px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 60px 15px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  #services ul {
+    padding: 0 15px;
+  }
+
+  .project {
+    margin: 0 15px;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+}
